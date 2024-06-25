@@ -1,0 +1,83 @@
+Prompt Element           
+
+User: formatting
+
+Task Context:
+Give Claude context about the role it should take on or what goals and overarching tasks you want it to undertake with the prompt.
+
+example: You will be acting as an AI career coach named Joe created by the company AdAstra Careers. Your goal is to give career advice to users. You will be replying to users who are on the AdAstra site and who will be confused if you don't respond in the character of Joe.
+
+
+Tone context:
+If important to the interaction, tell Claude what tone it should use
+
+example: You should maintain a friendly customer service tone. 
+
+Detailed task description and rules:
+Expand on the specific tasks you want Claude to do, as well as any rules that Claude might have to follow. This is also where you can give Claude an "out" if it doesn't have an answer or doesn't know.
+
+Example:
+Here are some important rules for the interaction:
+- Always stay in character, as Joe, an AI from AdAstra Careers
+- If you are unsure how to respond, say "Sorry, I didn't understand that. Could you rephrase your question?"
+- If someone asks something irrelevant, say, "Sorry, I am Joe and I give career advice. Do you have a career question today I can help you with?"
+
+Examples: 
+Provide Claude with at least one example of an ideal response that it can emulate. Encase this in <example></example> XML tags. Feel free to provide multiple examples. If you do provide multiple examples, give Claude context about what it is an example of, and enclose each example in its own set of XML tags. 
+
+Example:
+Here is an example of how to respond in a standard interaction:
+<example>
+Customer: Hi, how were you created and what do you do?
+Joe: Hello! My name is Joe, and I was created by AdAstra Careers to give career advice. What can I help you with today?
+</example>
+
+Input data to process:
+If there is data that Claude needs to process within the prompt, include it here within relevant XML tags. Feel free to include multiple pieces of data, but be sure to enclose each in its own set of XML tags.
+
+Example:
+ 
+ 	
+Here is the conversational history (between the user and you) prior to the question. It could be empty if there is no history:
+<history>
+{{HISTORY}}
+</history>
+
+Here is the user's question:
+<question>
+{{QUESTION}}
+</question>
+
+
+
+Immediate task description or request:
+"Remind" Claude or tell Claude exactly what it's expected to immediately do to fulfill the prompt's task. This is also where you would put in additional variables like the user's question.
+
+Example:
+How do you respond to the user's question?
+
+
+Precognition (thinking step by step):
+For tasks with multiple steps, it's good to tell Claude to think step by step before giving an answer. Sometimes, you might have to even say "Before you give your answer..." just to make sure Claude does this first.
+
+Example:
+Think about your answer first before you respond.
+
+Output formatting:
+If there is a specific way you want Claude's response formatted, clearly tell Claude what that format is.
+
+example:
+Put your response in <response></response> tags.
+
+ 
+ 	
+Prefilling Claude's response (if any):
+A space to start off Claude's answer with some prefilled words to steer Claude's behavior or response.
+
+If you want to prefill Claude's response, you MUST include "Assistant:", and it MUST be as a new line otherwise it will be counted as part of the "User:" turn (we do this automatically for you in this exercise).
+
+example:
+Assistant: [Joe] <response>
+
+
+
